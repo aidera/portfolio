@@ -1,0 +1,163 @@
+.button {
+  position: relative;
+  padding: 16px;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+
+  &:hover {
+    .background {
+      opacity: 1;
+    }
+
+    .borders {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .holders {
+      opacity: 1;
+    }
+
+    .shadow {
+      transform: translate(-50%, -50%) scaleY(1);
+      opacity: 1;
+    }
+
+    .text {
+      color: white;
+    }
+  }
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.text {
+  color: var(--text-color);
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+  padding: 12px 12px;
+  font-size: 16px;
+  display: block;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.borders {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  transform: scale(1.2);
+  opacity: 0;
+
+  span {
+    border-top: 2px solid var(--border-color);
+    border-left: 2px solid var(--border-color);
+    position: absolute;
+    width: 14px;
+    height: 14px;
+
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      top: 0;
+      right: 0;
+      transform: rotate(90deg);
+    }
+
+    &:nth-child(3) {
+      bottom: 0;
+      right: 0;
+      transform: rotate(180deg);
+    }
+
+    &:nth-child(4) {
+      bottom: 0;
+      left: 0;
+      transform: rotate(270deg);
+    }
+  }
+}
+
+.holders {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  opacity: 0;
+
+  span {
+    position: absolute;
+    background: #232424;
+
+    &:nth-child(1) {
+      width: 4px;
+      height: 6px;
+      top: 14px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:nth-child(2) {
+      width: 6px;
+      height: 4px;
+      top: 50%;
+      left: 14px;
+      transform: translate(-50%, -50%);
+    }
+
+    &:nth-child(3) {
+      width: 4px;
+      height: 6px;
+      bottom: 8px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:nth-child(4) {
+      width: 6px;
+      height: 4px;
+      top: 50%;
+      right: 8px;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.shadow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: calc(100% - 32px);
+
+  background: linear-gradient(
+    180deg,
+    rgba(29, 78, 122, 0),
+    rgba(29, 78, 122, 0.5),
+    rgba(29, 78, 122, 0)
+  );
+  filter: blur(2px);
+  transition: 0.6s;
+  transform: translate(-50%, -50%) scaleY(0);
+  opacity: 0;
+}
