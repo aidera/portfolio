@@ -1,28 +1,46 @@
-import { HTMLAttributes, ReactNode, useRef } from 'react';
-import styles from './Button.module.scss';
-import { isMobileDevice } from '../../../utils/client';
+import { HTMLAttributes, ReactNode, useEffect, useRef, useState } from 'react';
+import styles from './FilledButton.module.scss';
 import rippleEffect from '../../../utils/ripple-effect';
 import ElementTrianglesBackground from '../ElementTrianglesBackground/ElementTrianglesBackground';
+import classNames from 'classnames';
+import { playSound } from '../../../utils/sounds';
 
-interface ButtonProps extends HTMLAttributes<HTMLElement> {
+interface FilledButtonProps extends HTMLAttributes<HTMLElement> {
   text: string;
   icon?: ReactNode;
   title?: string;
 }
 
-export default function Button(props: ButtonProps) {
-  const isMobile = isMobileDevice();
+export default function FilledButton(props: FilledButtonProps) {
   const backgroundRef = useRef<HTMLDivElement>(null);
+  const [isActive, setIsActive] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isActive) {
+      playSound('hover');
+    }
+  }, [isActive]);
+
+  const mouseOverHandler = () => {
+    setIsActive(true);
+  };
 
   return (
     <button
       type="button"
-      className={`${styles.button} ${isMobile ? styles.isMobile : ''} ${
-        props.className ? props.className : ''
-      }`}
+      className={classNames(
+        styles.button,
+        isActive && styles.active,
+        props.className
+      )}
       onClick={(event) => {
         rippleEffect(event, backgroundRef.current, props.onClick);
       }}
+      onMouseOver={mouseOverHandler}
+      onMouseLeave={() => {
+        setIsActive(false);
+      }}
+      onBlur={() => setIsActive(false)}
       title={props.title}
     >
       <div className={styles.borders}>
@@ -43,7 +61,7 @@ export default function Button(props: ButtonProps) {
 
       <div className={styles.content}>
         <div ref={backgroundRef} className={styles.background}>
-          <ElementTrianglesBackground />
+          <ElementTrianglesBackground active={isActive} />
         </div>
 
         <span className={styles.text}>{props.text}</span>

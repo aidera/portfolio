@@ -1,4 +1,4 @@
-import Button from '../../components/_ui/Button/Button'
+import Button from '../../components/_ui/FilledButton/FilledButton'
 
 export default function AboutPage() {
   return (

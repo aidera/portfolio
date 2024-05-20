@@ -1,15 +1,15 @@
-import Button from '../_ui/Button/Button';
+import FilledButton from '../_ui/FilledButton/FilledButton';
 import styles from './MainMenu.module.scss';
 
 export default function MainMenu() {
   return (
     <div className={styles.menu}>
-      <Button text="About" />
-      <Button text="Contacts" />
-      <Button text="Education" />
-      <Button text="Experience" />
-      <Button text="Projects" />
-      <Button text="Skills" />
+      <FilledButton text="About" />
+      <FilledButton text="Contacts" />
+      <FilledButton text="Education" />
+      <FilledButton text="Experience" />
+      <FilledButton text="Projects" />
+      <FilledButton text="Skills" />
     </div>
   );
 }
