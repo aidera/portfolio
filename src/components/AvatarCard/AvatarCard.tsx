@@ -67,11 +67,11 @@ export default function AvatarCard() {
             />
           </div>
 
-          <div className={styles.actions}>
+          {/* <div className={styles.actions}>
             <div className={classNames(styles.action, styles['speak-action'])}>
               <RecordSpeech />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

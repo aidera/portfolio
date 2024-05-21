@@ -8,18 +8,17 @@
 .avatar-container {
   position: relative;
   overflow: hidden; // It's important to keep overflow hidden
-  padding: 50px; // This supports hidden and animation and does not allow to have extra scrolls
   user-select: none;
   animation: ContainerAnim 0.5s ease-out forwards;
   left: 50%;
-  margin-left: -300px;
+  margin-left: -250px;
 
   @media (max-width: 615px) {
-    margin-left: -275px;
+    margin-left: -225px;
   }
 
   @media (max-width: 440px) {
-    margin-left: -215px;
+    margin-left: -165px;
   }
 }
 
@@ -148,7 +147,6 @@
   background: black;
   position: absolute;
   border-radius: 50%;
-  cursor: pointer;
 
   @media (max-width: 615px) {
     width: 300px;

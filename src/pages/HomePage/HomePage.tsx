@@ -6,10 +6,10 @@ import styles from './HomePage.module.scss';
 
 export default function HomePage() {
   return (
-    <>
+    <main>
       <MainBackground />
 
-      <main className={styles.container}>
+      <div className={styles.container}>
         <div className={styles.description}>
           <DescriptionBlock
             title1="Evgenia Mikhaleva"
@@ -21,7 +21,17 @@ export default function HomePage() {
           <MainMenu />
           <AvatarCard />
         </div>
-      </main>
-    </>
+
+        <footer className={styles.footer}>
+          Inspired by{' '}
+          <a
+            href="https://www.quanticdream.com/en/detroit-become-human"
+            target="_blank"
+          >
+            Detroit: Become Human
+          </a>
+        </footer>
+      </div>
+    </main>
   );
 }
