@@ -17,6 +17,11 @@ export default function CircledLinesEqualizer() {
 
   useEffect(() => {
     if (!isPronouncing) {
+      resetState(group1);
+      resetState(group2);
+      resetState(group3);
+      resetState(group4);
+
       runRestStateAnimation(group1);
       runRestStateAnimation(group2);
       runRestStateAnimation(group3);
@@ -77,11 +82,6 @@ export default function CircledLinesEqualizer() {
           cancelAnimationFrame(animationFrameId);
         }
         setIsPronouncing(false);
-
-        resetState(group1);
-        resetState(group2);
-        resetState(group3);
-        resetState(group4);
 
         clearInterval(soundIntervalId);
         soundIntervalId = window.setInterval(playSoundAndAnimateRects, 15000);
