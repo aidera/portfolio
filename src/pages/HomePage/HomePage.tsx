@@ -12,7 +12,7 @@ export default function HomePage() {
       <div className={styles.container}>
         <div className={styles.description}>
           <DescriptionBlock
-            title1="Evgenia Mikhaleva"
+            title1="Eugenia Mikhaleva"
             title2="Frontend Developer"
           />
         </div>

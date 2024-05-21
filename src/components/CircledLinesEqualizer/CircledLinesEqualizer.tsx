@@ -1,11 +1,9 @@
-import React, { useRef, useEffect } from 'react';
-import { useAppSelector } from '../../store/hooks';
+import React, { useRef, useEffect, useState } from 'react';
 import styles from './CircledLinesEqualizer.module.scss';
+import { avatarSounds } from '../../utils/sounds';
 
 export default function CircledLinesEqualizer() {
-  const isListening = useAppSelector(
-    (state) => state.listenAndPronounce.isListening
-  );
+  const [isPronouncing, setIsPronouncing] = useState<boolean>(false);
   const group1 = useRef<SVGGElement>(null);
   const group2 = useRef<SVGGElement>(null);
   const group3 = useRef<SVGGElement>(null);
@@ -18,13 +16,12 @@ export default function CircledLinesEqualizer() {
   const initialHeight = '2';
 
   useEffect(() => {
-    if (!isListening) {
+    if (!isPronouncing) {
       runRestStateAnimation(group1);
       runRestStateAnimation(group2);
       runRestStateAnimation(group3);
       runRestStateAnimation(group4);
 
-      // Set the interval for the rest state animation
       restAnimationIntervalId.current = setInterval(() => {
         runRestStateAnimation(group1);
         runRestStateAnimation(group2);
@@ -32,100 +29,111 @@ export default function CircledLinesEqualizer() {
         runRestStateAnimation(group4);
       }, 10000);
     } else {
-      // Clear the interval when isListening becomes true
       if (restAnimationIntervalId.current) {
         clearInterval(restAnimationIntervalId.current);
         restAnimationIntervalId.current = null;
       }
     }
 
-    // Cleanup function to clear the interval when the component unmounts
     return () => {
       if (restAnimationIntervalId.current) {
         clearInterval(restAnimationIntervalId.current);
       }
     };
-  }, [isListening]);
+  }, [isPronouncing]);
 
   useEffect(() => {
     let animationFrameId: number | undefined = undefined;
-    let audioContext: AudioContext | undefined = undefined;
-    let analyser: AnalyserNode | undefined = undefined;
-    let source: MediaStreamAudioSourceNode | undefined = undefined;
+    let soundIntervalId: number | undefined = undefined;
+    const audioContext = new AudioContext();
+    const analyser = audioContext.createAnalyser();
+    analyser.fftSize = 256;
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
+    let lastSoundIndex: null | number = null;
 
-    if (isListening) {
-      navigator.mediaDevices
-        .getUserMedia({ audio: true })
-        .then((stream) => {
-          audioContext = new AudioContext();
-          source = audioContext.createMediaStreamSource(stream);
-          analyser = audioContext.createAnalyser();
-          analyser.fftSize = 256;
-          const bufferLength = analyser.frequencyBinCount;
-          const dataArray = new Uint8Array(bufferLength);
-          source.connect(analyser);
+    const playSoundAndAnimateRects = (preferableSoundIndex?: number) => {
+      let soundIndex;
+      if (preferableSoundIndex !== undefined) {
+        soundIndex = preferableSoundIndex;
+      } else {
+        do {
+          soundIndex = Math.floor(Math.random() * avatarSounds.length);
+        } while (soundIndex === lastSoundIndex);
+      }
+      lastSoundIndex = soundIndex;
 
-          const animateRects = () => {
-            animationFrameId = requestAnimationFrame(animateRects);
-            analyser!.getByteFrequencyData(dataArray);
+      const audioElement = new Audio(
+        'assets/sounds/' + avatarSounds[soundIndex]
+      );
+      const track = audioContext.createMediaElementSource(audioElement);
+      track.connect(analyser);
+      analyser.connect(audioContext.destination);
 
-            // From the first to the last rect
-            [group1, group3, group2, group4].forEach((groupRef) => {
-              if (!groupRef.current) return;
-              const rects = groupRef.current.children;
-              for (let i = 0; i < rects.length; i++) {
-                const width = dataArray[i] / 2.5;
-                (rects[i].children[0] as HTMLElement).style.fill = activeColor;
-                (rects[i].children[0] as HTMLElement).style.width =
-                  width + 'px';
-              }
-            });
+      audioElement.addEventListener('ended', () => {
+        track.disconnect(analyser);
+        analyser.disconnect(audioContext.destination);
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+        }
+        setIsPronouncing(false);
 
-            /** UNCOMMENT IF YOU NEED A REVERSE EFFECT. Do not forget to remove the groups from the function above
-            // From the last to the first rect
-            [group2, group4].forEach((groupRef) => {
-              if (!groupRef.current) return;
-              const rects = groupRef.current.children;
-              for (let i = 0; i < rects.length; i++) {
-                const reversedIndex = rects.length - 1 - i;
-                const width = dataArray[reversedIndex] / 2;
-                (rects[i].children[0] as HTMLElement).style.fill = activeColor;
-                (rects[i].children[0] as HTMLElement).style.width =
-                  width + 'px';
-              }
-            });
-             */
-          };
+        resetState(group1);
+        resetState(group2);
+        resetState(group3);
+        resetState(group4);
 
-          animateRects();
-        })
-        .catch((err) => {
-          console.error('Error accessing the microphone', err);
+        clearInterval(soundIntervalId);
+        soundIntervalId = window.setInterval(playSoundAndAnimateRects, 15000);
+      });
+
+      const play = () => {
+        audioElement
+          .play()
+          .then(() => {
+            setIsPronouncing(true);
+            audioContext.resume();
+          })
+          .catch(() => {
+            setTimeout(() => {
+              play();
+            }, 2000);
+          });
+      };
+
+      play();
+
+      const animateRects = () => {
+        animationFrameId = requestAnimationFrame(animateRects);
+        analyser.getByteFrequencyData(dataArray);
+
+        // From the first to the last rect
+        [group1, group3, group2, group4].forEach((groupRef) => {
+          if (!groupRef.current) return;
+          const rects = groupRef.current.children;
+          for (let i = 0; i < rects.length; i++) {
+            const width = dataArray[i] / 2.5;
+            (rects[i].children[0] as HTMLElement).style.fill = activeColor;
+            (rects[i].children[0] as HTMLElement).style.width = width + 'px';
+          }
         });
-    } else {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
-      if (audioContext) {
-        //@ts-ignore
-        audioContext.close();
-      }
+      };
 
-      resetState(group1);
-      resetState(group2);
-      resetState(group3);
-      resetState(group4);
-    }
+      animateRects();
+    };
+
+    setTimeout(() => {
+      playSoundAndAnimateRects(0);
+    }, 5000);
 
     return () => {
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId);
       }
-      if (audioContext) {
-        audioContext.close();
-      }
+      clearInterval(soundIntervalId);
+      audioContext.close();
     };
-  }, [isListening]);
+  }, []);
 
   const createRects = (
     groupRef: React.RefObject<SVGGElement>,
