@@ -1,0 +1,67 @@
+.container {
+  position: relative;
+  padding: 12px 24px;
+}
+
+.borders {
+  span {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    transition: 0.3s;
+    animation: BordersAnimation 0.3s ease-out forwards;
+
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+      border-top: 2px solid var(--primary-color);
+      border-left: 2px solid var(--primary-color);
+      transform: translate(-16px, -16px);
+    }
+
+    &:nth-child(2) {
+      top: 0;
+      right: 0;
+      border-top: 2px solid var(--primary-color);
+      border-right: 2px solid var(--primary-color);
+      transform: translate(16px, -16px);
+    }
+
+    &:nth-child(3) {
+      bottom: 0;
+      right: 0;
+      border-bottom: 2px solid var(--primary-color);
+      border-right: 2px solid var(--primary-color);
+      transform: translate(16px, 16px);
+    }
+
+    &:nth-child(4) {
+      bottom: 0;
+      left: 0;
+      border-bottom: 2px solid var(--primary-color);
+      border-left: 2px solid var(--primary-color);
+      transform: translate(-16px, 16px);
+    }
+  }
+}
+
+@keyframes BordersAnimation {
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.content {
+  h1 {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  h2 {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}

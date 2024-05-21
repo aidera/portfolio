@@ -1,0 +1,11 @@
+.svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  rect {
+    transition:
+      fill 0.8s,
+      width 400ms ease-out;
+  }
+}

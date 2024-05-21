@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 import classNames from 'classnames';
-import ProgressBar from './ProgressBar/ProgressBar';
 import RecordSpeech from './RecordSpeech/RecordSpeech';
 import styles from './AvatarCard.module.scss';
 import { isMobileDevice } from '../../utils/client';
 import useWindowDimensions from '../../utils/hooks/useWindowDimensions';
+import CircledLinesEqualizer from '../CircledLinesEqualizer/CircledLinesEqualizer';
 
 export default function AvatarCard() {
   const innerContainerRef = useRef<HTMLDivElement>(null);
@@ -52,12 +52,10 @@ export default function AvatarCard() {
     <div className={styles.container}>
       <div className={styles['avatar-container']}>
         <div ref={innerContainerRef} className={styles['inner-container']}>
-          <div className={styles.orbit1}>
-            <div className={styles.ripple}></div>
-          </div>
+          <div className={styles.orbit1}></div>
 
-          <div className={styles.orbit2}>
-            <ProgressBar />
+          <div className={styles.equalizer1}>
+            <CircledLinesEqualizer />
           </div>
 
           <div className={styles.orbit3}>

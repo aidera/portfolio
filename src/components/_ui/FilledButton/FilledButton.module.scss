@@ -5,6 +5,7 @@
   display: inline-flex;
   align-items: center;
   user-select: none;
+  max-width: 100%;
 
   &.active {
     .background {
