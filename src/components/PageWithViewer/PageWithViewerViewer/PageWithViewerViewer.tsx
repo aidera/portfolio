@@ -8,11 +8,12 @@ interface PageWithViewerViewerProps extends PropsWithChildren {
 export default function PageWithViewerViewer(props: PageWithViewerViewerProps) {
   return (
     <div className={styles.container}>
-      {props.children}
+      <div className={styles.content}>{props.children}</div>
       <div className={styles.line}>
-        {props.menuItems && props.menuItems.map(el => {
-          return <div key={el?.toString()}>{el}</div>
-        })}
+        {props.menuItems &&
+          props.menuItems.map((el) => {
+            return <div key={el?.toString()}>{el}</div>;
+          })}
       </div>
     </div>
   );

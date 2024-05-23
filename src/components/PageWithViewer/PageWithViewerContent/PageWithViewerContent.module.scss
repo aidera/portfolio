@@ -4,6 +4,7 @@
   position: relative;
   overflow: hidden;
   z-index: 2;
+  animation: AppearAnimation 1s ease-out;
 
   @media (max-width: 1000px) {
     width: 100%;
@@ -11,6 +12,25 @@
     height: auto;
     overflow-x: hidden;
     overflow-y: auto;
+    animation: AppearAnimation2 1s ease-out;
+  }
+}
+
+@keyframes AppearAnimation {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes AppearAnimation2 {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
@@ -48,7 +68,7 @@
   }
 
   .background2 {
-    background: rgba(215, 215, 215, 0.8);
+    background: rgba(215, 215, 215, 1);
     width: 85%;
     height: 100%;
     position: absolute;
