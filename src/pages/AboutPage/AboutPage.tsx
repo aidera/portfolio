@@ -1,3 +1,4 @@
+import BackToMenuButton from '../../components/BackToMenuButton/BackToMenuButton';
 import PageWithViewer from '../../components/PageWithViewer/PageWithViewer';
 import PageWithViewerContent from '../../components/PageWithViewer/PageWithViewerContent/PageWithViewerContent';
 import PageWithViewerViewer from '../../components/PageWithViewer/PageWithViewerViewer/PageWithViewerViewer';
@@ -56,7 +57,7 @@ export default function AboutPage() {
           environments, ensuring effective communication and project execution.
         </p>
       </PageWithViewerContent>
-      <PageWithViewerViewer>
+      <PageWithViewerViewer menuItems={[<BackToMenuButton />]}>
         <img src={'/assets/images/bg1.png'} />
       </PageWithViewerViewer>
     </PageWithViewer>
