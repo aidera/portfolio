@@ -1,0 +1,63 @@
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: rgba(215, 215, 215, 1);
+  background-size: cover;
+  background-position: center center;
+  animation: scaleBackground 7s infinite alternate;
+}
+
+@keyframes scaleBackground {
+  0% {
+    background-size: 100% 100%;
+  }
+  100% {
+    background-size: 110% 110%;
+  }
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}
+
+.el1,
+.el3,
+.el5,
+.el7 {
+  opacity: 0.6;
+  animation: ElAnimation 12s ease-in-out infinite;
+}
+
+@keyframes ElAnimation {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.el2,
+.el4,
+.el6 {
+  opacity: 0.1;
+  animation: ElAnimation 12s ease-in-out 6s infinite;
+}
+
+@keyframes ElAnimation {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}

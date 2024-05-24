@@ -1,9 +1,10 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
+import Title from '../../../_ui/Title/Title';
 import styles from './PageWithViewerContent.module.scss';
-import Title from '../../_ui/Title/Title';
 
 interface PageWithViewerContent extends PropsWithChildren {
   title: string;
+  menuItems?: ReactNode[];
 }
 
 export default function PageWithViewerContent(props: PageWithViewerContent) {
@@ -18,6 +19,13 @@ export default function PageWithViewerContent(props: PageWithViewerContent) {
       <div className={styles.content}>
         <Title>{props.title}</Title>
         <div className={styles.children}>{props.children}</div>
+
+        <div className={styles.footer}>
+          {props.menuItems &&
+            props.menuItems.map((el) => {
+              return <div key={el?.toString()}>{el}</div>;
+            })}
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 180px 24px 40px 100px;
+
+  @media (max-width: 748px) {
+    padding: 40px 20px;
+    padding-top: 100px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  position: relative;
+}
+
+.children {
+  flex-grow: 1;
+}
+
+.header {
+  width: 100%;
+  max-width: 600px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  margin-top: 40px; 
+}

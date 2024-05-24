@@ -9,16 +9,16 @@ import GroupIcon from '../../assets/icons/GroupIcon';
 import OfficeIcon from '../../assets/icons/OfficeIcon';
 import ToolsIcon from '../../assets/icons/ToolsIcon';
 import BackToMenuButton from '../../components/BackToMenuButton/BackToMenuButton';
-import PageWithViewer from '../../components/PageWithViewer/PageWithViewer';
-import PageWithViewerContent from '../../components/PageWithViewer/PageWithViewerContent/PageWithViewerContent';
-import PageWithViewerViewer from '../../components/PageWithViewer/PageWithViewerViewer/PageWithViewerViewer';
+import PageWithViewer from '../../components/_layouts/PageWithViewer/PageWithViewer';
+import PageWithViewerContent from '../../components/_layouts/PageWithViewer/PageWithViewerContent/PageWithViewerContent';
+import PageWithViewerViewer from '../../components/_layouts/PageWithViewer/PageWithViewerViewer/PageWithViewerViewer';
 import DescriptionBlock from '../../components/_ui/DescriptionBlock/DescriptionBlock';
 import styles from './AboutPage.module.scss';
 
 export default function AboutPage() {
   return (
     <PageWithViewer>
-      <PageWithViewerContent title="About">
+      <PageWithViewerContent title="About" menuItems={[<BackToMenuButton />]}>
         <DescriptionBlock
           title1="Eugenia Mikhaleva"
           title1Type="h2"

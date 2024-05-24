@@ -1,6 +1,4 @@
 import { useEffect, useRef } from 'react';
-import classNames from 'classnames';
-import RecordSpeech from './RecordSpeech/RecordSpeech';
 import styles from './AvatarCard.module.scss';
 import { isMobileDevice } from '../../utils/client';
 import useWindowDimensions from '../../utils/hooks/useWindowDimensions';
