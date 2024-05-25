@@ -3,6 +3,7 @@ import { Outlet, ScrollRestoration } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import ContactsPage from './pages/ContactsPage/ContactsPage';
+import ExperiencePage from './pages/ExperiencePage/ExperiencePage';
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: '/contacts',
         element: <ContactsPage />,
+      },
+      {
+        path: '/experience',
+        element: <ExperiencePage />,
       },
     ],
   },

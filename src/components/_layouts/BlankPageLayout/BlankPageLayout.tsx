@@ -2,14 +2,14 @@ import { PropsWithChildren } from 'react';
 import SimpleBackground from '../../SimpleBackground/SimpleBackground';
 import Title from '../../_ui/Title/Title';
 import BackToMenuButton from '../../BackToMenuButton/BackToMenuButton';
-import styles from './BlankPage.module.scss';
+import styles from './BlankPageLayout.module.scss';
 
-interface BlankPageProps extends PropsWithChildren {
+interface BlankPageLayoutProps extends PropsWithChildren {
   title: string;
   backgroundImage?: string;
 }
 
-export default function BlankPage(props: BlankPageProps) {
+export default function BlankPageLayout(props: BlankPageLayoutProps) {
   return (
     <main className={styles.container}>
       <SimpleBackground backgroundImage={props.backgroundImage} />

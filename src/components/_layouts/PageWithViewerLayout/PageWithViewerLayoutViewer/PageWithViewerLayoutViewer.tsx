@@ -1,11 +1,11 @@
 import { PropsWithChildren, ReactNode } from 'react';
-import styles from './PageWithViewerViewer.module.scss';
+import styles from './PageWithViewerLayoutViewer.module.scss';
 
-interface PageWithViewerViewerProps extends PropsWithChildren {
+interface PageWithViewerLayoutViewerProps extends PropsWithChildren {
   menuItems?: ReactNode[];
 }
 
-export default function PageWithViewerViewer(props: PageWithViewerViewerProps) {
+export default function PageWithViewerLayoutViewer(props: PageWithViewerLayoutViewerProps) {
   return (
     <div className={styles.container}>
       <div className={styles.content}>{props.children}</div>

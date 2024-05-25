@@ -1,13 +1,15 @@
 import { PropsWithChildren, ReactNode } from 'react';
 import Title from '../../../_ui/Title/Title';
-import styles from './PageWithViewerContent.module.scss';
+import styles from './PageWithViewerLayoutContent.module.scss';
 
-interface PageWithViewerContent extends PropsWithChildren {
+interface PageWithViewerLayoutContent extends PropsWithChildren {
   title: string;
   menuItems?: ReactNode[];
 }
 
-export default function PageWithViewerContent(props: PageWithViewerContent) {
+export default function PageWithViewerLayoutContent(
+  props: PageWithViewerLayoutContent
+) {
   return (
     <div className={styles.container}>
       <div className={styles.background}>

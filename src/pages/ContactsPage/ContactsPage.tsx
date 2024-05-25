@@ -4,12 +4,12 @@ import HomeIcon from '../../assets/icons/HomeIcon';
 import LinkedInIcon from '../../assets/icons/LinkedInIcon';
 import MailIcon from '../../assets/icons/MailIcon';
 import PhoneIcon from '../../assets/icons/PhoneIcon';
-import BlankPage from '../../components/_layouts/BlankPage/BlankPage';
+import BlankPageLayout from '../../components/_layouts/BlankPageLayout/BlankPageLayout';
 import styles from './ContactsPage.module.scss';
 
 export default function ContactsPage() {
   return (
-    <BlankPage title="Contacts" backgroundImage="/assets/images/bg1.png">
+    <BlankPageLayout title="Contacts" backgroundImage="/assets/images/bg1.png">
       <div className={styles.items}>
         <div className={styles.item}>
           <div className={styles.icon}>
@@ -72,6 +72,6 @@ export default function ContactsPage() {
           </p>
         </div>
       </div>
-    </BlankPage>
+    </BlankPageLayout>
   );
 }

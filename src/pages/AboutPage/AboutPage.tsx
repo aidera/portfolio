@@ -9,16 +9,16 @@ import GroupIcon from '../../assets/icons/GroupIcon';
 import OfficeIcon from '../../assets/icons/OfficeIcon';
 import ToolsIcon from '../../assets/icons/ToolsIcon';
 import BackToMenuButton from '../../components/BackToMenuButton/BackToMenuButton';
-import PageWithViewer from '../../components/_layouts/PageWithViewer/PageWithViewer';
-import PageWithViewerContent from '../../components/_layouts/PageWithViewer/PageWithViewerContent/PageWithViewerContent';
-import PageWithViewerViewer from '../../components/_layouts/PageWithViewer/PageWithViewerViewer/PageWithViewerViewer';
+import PageWithViewerLayout from '../../components/_layouts/PageWithViewerLayout/PageWithViewerLayout';
+import PageWithViewerLayoutContent from '../../components/_layouts/PageWithViewerLayout/PageWithViewerLayoutContent/PageWithViewerLayoutContent';
+import PageWithViewerLayoutViewer from '../../components/_layouts/PageWithViewerLayout/PageWithViewerLayoutViewer/PageWithViewerLayoutViewer';
 import DescriptionBlock from '../../components/_ui/DescriptionBlock/DescriptionBlock';
 import styles from './AboutPage.module.scss';
 
 export default function AboutPage() {
   return (
-    <PageWithViewer>
-      <PageWithViewerContent title="About" menuItems={[<BackToMenuButton />]}>
+    <PageWithViewerLayout>
+      <PageWithViewerLayoutContent title="About" menuItems={[<BackToMenuButton />]}>
         <DescriptionBlock
           title1="Eugenia Mikhaleva"
           title1Type="h2"
@@ -139,10 +139,10 @@ export default function AboutPage() {
             execution.
           </p>
         </div>
-      </PageWithViewerContent>
-      <PageWithViewerViewer menuItems={[<BackToMenuButton />]}>
+      </PageWithViewerLayoutContent>
+      <PageWithViewerLayoutViewer menuItems={[<BackToMenuButton />]}>
         <img src={'/assets/images/bg1.png'} />
-      </PageWithViewerViewer>
-    </PageWithViewer>
+      </PageWithViewerLayoutViewer>
+    </PageWithViewerLayout>
   );
 }

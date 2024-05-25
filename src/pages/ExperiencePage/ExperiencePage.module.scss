@@ -1,0 +1,23 @@
+.items {
+  position: relative;
+  display: flex;
+  height: 510px;
+
+  > * {
+    flex-shrink: 0;
+    
+    &:nth-child(2n-1) {
+      align-self: flex-start;
+    }
+
+    &:nth-child(2n) {
+      align-self: center;
+      margin-left: -150px;
+      margin-bottom: -20px;
+    }
+
+    &:nth-child(4n-1) {
+      align-self: flex-end;
+    }
+  }
+}
