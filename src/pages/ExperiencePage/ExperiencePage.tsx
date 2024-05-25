@@ -9,7 +9,7 @@ export default function ExperiencePage() {
       <div className={styles.items}>
         <ChartItemBig
           title="Neyra Labs"
-          img="/assets/images/avatar.jpg"
+          img="/assets/images/neyra.webp"
         >
           <p>Frontend Developer</p>
           <p>Toronto, Canada</p>
@@ -23,8 +23,8 @@ export default function ExperiencePage() {
           finalPoint="left"
         />
 
-        <ChartItemBig title="Connectbase" img="/assets/images/bg1.png">
-          <p>Frontend Developer</p>
+        <ChartItemBig title="Connectbase" img="/assets/images/connectbase.jpg">
+          <p>Frontend Team Lead</p>
           <p>Westborough, USA</p>
           <p>Apr 2021 - Jul 2023</p>
         </ChartItemBig>
@@ -49,7 +49,7 @@ export default function ExperiencePage() {
           finalPoint="left"
         />
 
-        <ChartItemBig title="Newage" img="/assets/images/bg1.png">
+        <ChartItemBig title="Newage" img="/assets/images/newage.jpg">
           <p>Web Traffic Manager</p>
           <p>Kyiv, Ukraine</p>
           <p>Mar 2019 - Mar 2020</p>
@@ -62,8 +62,8 @@ export default function ExperiencePage() {
           finalPoint="left"
         />
 
-        <ChartItemBig title="Vbiznese" img="/assets/images/avatar.jpg">
-          <p>Frontend Developer</p>
+        <ChartItemBig title="Vbiznese" img="/assets/images/vbiznese.jpg">
+          <p>Frontend Developer / Marketer</p>
           <p>St.Petersburg, Russia</p>
           <p>Oct 2017 - Mar 2019</p>
         </ChartItemBig>
