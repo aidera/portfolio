@@ -1,0 +1,68 @@
+.items {
+  position: relative;
+  display: flex;
+  height: 510px;
+
+  > * {
+    flex-shrink: 0;
+
+    &:nth-child(2n-1) {
+      align-self: flex-start;
+    }
+
+    &:nth-child(2n) {
+      align-self: center;
+      margin-left: -150px;
+      margin-bottom: -20px;
+    }
+
+    &:nth-child(4n-1) {
+      align-self: flex-end;
+    }
+  }
+
+  .connector1 {
+    margin-bottom: -45px;
+  }
+  .connector2 {
+    margin-bottom: -40px;
+  }
+  .connector3 {
+    margin-bottom: -40px;
+  }
+  .connector4 {
+    margin-bottom: -40px;
+  }
+  .connector5 {
+    margin-bottom: -30px;
+  }
+  .connector6 {
+    margin-bottom: -35px;
+  }
+  .connector7 {
+    margin-bottom: -50px;
+  }
+  .connector8 {
+    margin-bottom: -45px;
+  }
+  .connector9 {
+    margin-bottom: -50px;
+  }
+  .connector10 {
+    margin-bottom: -50px;
+  }
+  .connector11 {
+    margin-bottom: -50px;
+  }
+  .connector12 {
+    margin-bottom: -50px;
+  }
+  .connector13 {
+    margin-bottom: -50px;
+  }
+  .connector14 {
+    margin-bottom: -50px;
+  }
+}
+
+

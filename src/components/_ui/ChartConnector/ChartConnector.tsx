@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import styles from './ChartConnector.module.scss';
 
 interface ChartConnectorProps {
@@ -5,12 +6,13 @@ interface ChartConnectorProps {
   height: number;
   flip: boolean;
   finalPoint: 'left' | 'right';
+  className?: string;
 }
 
 export default function ChartConnector(props: ChartConnectorProps) {
   return (
     <div
-      className={styles.container}
+      className={classNames(styles.container, props.className)}
       style={{ width: props.width + 'px', height: props.height + 'px' }}
     >
       <div
