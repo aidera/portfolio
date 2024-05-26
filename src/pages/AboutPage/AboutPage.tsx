@@ -141,7 +141,7 @@ export default function AboutPage() {
         </div>
       </PageWithViewerLayoutContent>
       <PageWithViewerLayoutViewer menuItems={[<BackToMenuButton />]}>
-        <img src={'/assets/images/bg1.png'} />
+        <img src={'/assets/images/about.jpg'} />
       </PageWithViewerLayoutViewer>
     </PageWithViewerLayout>
   );

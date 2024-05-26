@@ -41,16 +41,111 @@ const items: GridItemType[] = [
 ];
 
 export default function SkillsPage() {
+  const handleItemClick = (item: GridItemType) => {
+    switch (item.id) {
+      case 1:
+        window.open('https://react.dev/');
+        break;
+      case 2:
+        window.open('https://nextjs.org/');
+        break;
+      case 3:
+        window.open('https://angular.dev/');
+        break;
+      case 4:
+        window.open('https://www.typescriptlang.org/');
+        break;
+      case 5:
+        window.open('https://www.javascript.com/');
+        break;
+      case 6:
+        window.open('https://redux-toolkit.js.org/');
+        break;
+      case 9:
+        window.open('https://rxjs.dev/');
+        break;
+      case 7:
+        window.open('https://ngrx.io/');
+        break;
+      case 22:
+        window.open('https://threejs.org/');
+        break;
+      case 13:
+        window.open('https://nodejs.org');
+        break;
+      case 18:
+        window.open('https://mui.com/');
+        break;
+      case 14:
+        window.open('https://getbootstrap.com/');
+        break;
+      case 15:
+        window.open('https://developer.mozilla.org/en-US/docs/Glossary/HTML5');
+        break;
+      case 16:
+        window.open('https://en.wikipedia.org/wiki/CSS');
+        break;
+      case 17:
+        window.open('https://sass-lang.com/');
+        break;
+      case 10:
+        window.open('https://www.docker.com/');
+        break;
+      case 12:
+        window.open('https://git-scm.com/');
+        break;
+      case 11:
+        window.open('https://github.com/aidera');
+        break;
+      case 19:
+        window.open(
+          'https://www.google.com/search?q=rest+api&sca_esv=35b2ac92d41e214b&sxsrf=ADLYWIL-LdtNv3s3yrIRCa0IGjbqItqT9g%3A1716747045524&ei=JXtTZvzRH8LdptQPmfmS6Ak&udm=&ved=0ahUKEwi8-MSO9auGAxXCrokEHZm8BJ0Q4dUDCBA&uact=5&oq=rest+api&gs_lp=Egxnd3Mtd2l6LXNlcnAiCHJlc3QgYXBpMgQQABhHMgQQABhHMgQQABhHMgQQABhHMgQQABhHMgQQABhHMgQQABhHMgQQABhHSNQFUGpYanABeAKQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgKgAgbCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBZgDAOIDBRIBMSBAiAYBkAYIkgcBMqAHAA&sclient=gws-wiz-serp'
+        );
+        break;
+      case 20:
+        window.open('https://graphql.org/');
+        break;
+      case 21:
+        window.open('https://code.visualstudio.com/');
+        break;
+      case 8:
+        window.open('https://www.figma.com/');
+        break;
+      case 23:
+        window.open(
+          'https://www.autodesk.com/ca-en/products/maya/overview?term=1-YEAR&tab=subscription'
+        );
+        break;
+      case 24:
+        window.open('https://www.blender.org/');
+        break;
+      case 25:
+        window.open('https://www.adobe.com/products/photoshop.html');
+        break;
+      case 26:
+        window.open('https://www.adobe.com/ca/products/illustrator.html');
+        break;
+      case 27:
+        window.open(
+          'https://www.adobe.com/ca/products/substance3d-painter.html'
+        );
+        break;
+      case 28:
+        window.open('https://www.maxon.net/en/zbrush');
+        break;
+    }
+  };
+
   return (
     <PageWithViewerLayout>
       <PageWithViewerLayoutContent
         title="Skills"
         menuItems={[<BackToMenuButton />]}
       >
-        <Grid items={items} />
+        <Grid items={items} onClick={handleItemClick} />
       </PageWithViewerLayoutContent>
       <PageWithViewerLayoutViewer menuItems={[<BackToMenuButton />]}>
-        <img src={'/assets/images/bg1.png'} />
+        <img src={'/assets/images/skills.jpg'} />
       </PageWithViewerLayoutViewer>
     </PageWithViewerLayout>
   );

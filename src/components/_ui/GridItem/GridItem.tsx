@@ -28,7 +28,9 @@ export default function GridItem(props: GridItemProps) {
     <div
       className={classNames(styles.item, isActive && styles.active)}
       onClick={(event) => {
-        rippleEffect(event, rippleRef.current, props.onClick);
+        rippleEffect(event, rippleRef.current, () =>
+          props.onClick?.(props.item)
+        );
       }}
       onMouseOver={mouseOverHandler}
       onMouseLeave={() => {

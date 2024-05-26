@@ -9,7 +9,7 @@ import styles from './ContactsPage.module.scss';
 
 export default function ContactsPage() {
   return (
-    <BlankPageLayout title="Contacts" backgroundImage="/assets/images/bg1.png">
+    <BlankPageLayout title="Contacts" backgroundImage="/assets/images/contacts.jpg">
       <div className={styles.items}>
         <div className={styles.item}>
           <div className={styles.icon}>

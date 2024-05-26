@@ -5,6 +5,7 @@ import styles from './Grid.module.scss';
 
 interface GridProps {
   items: GridItemType[];
+  onClick?: (item: GridItemType) => void;
 }
 
 export default function Grid(props: GridProps) {
@@ -63,7 +64,7 @@ export default function Grid(props: GridProps) {
             style={{ marginLeft: `${marginLeft}px` }}
           >
             {row.map((item) => (
-              <GridItem key={item.id} item={item} />
+              <GridItem key={item.id} item={item} onClick={props.onClick} />
             ))}
           </div>
         );

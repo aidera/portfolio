@@ -13,10 +13,10 @@
 
 @keyframes scaleBackground {
   0% {
-    background-size: 100% 100%;
+    transform: scale(1);
   }
   100% {
-    background-size: 110% 110%;
+    transform: scale(1.05);
   }
 }
 
