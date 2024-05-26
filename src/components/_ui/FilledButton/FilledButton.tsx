@@ -61,6 +61,7 @@ export default function FilledButton(props: FilledButtonProps) {
     return (
       <Link
         to={props.link}
+        draggable={false}
         relative="path"
         className={classNames(
           styles.button,
@@ -84,6 +85,7 @@ export default function FilledButton(props: FilledButtonProps) {
 
   return (
     <button
+      draggable={false}
       type="button"
       className={classNames(
         styles.button,

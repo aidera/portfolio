@@ -50,6 +50,10 @@
   animation: AppearAnimation 10s ease-in-out infinite;
   overflow: hidden;
 
+  > * {
+    user-select: none;
+  }
+
   > img {
     object-fit: cover;
     width: 80%;

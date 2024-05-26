@@ -9,8 +9,8 @@ export default function MainMenu() {
       <FilledButton text="Skills" link={'/skills'} />
 
       <FilledButton text="Experience" link={'/experience'} />
-      {/* <FilledButton text="Projects" link={'/projects'} /> */}
       <FilledButton text="Contacts" link={'/contacts'} />
+      {/* <FilledButton text="Projects" link={'/projects'} /> */}
     </div>
   );
 }

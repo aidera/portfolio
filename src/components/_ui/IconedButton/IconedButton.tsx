@@ -51,6 +51,7 @@ export default function IconedButton(props: IconedButtonProps) {
     return (
       <Link
         to={props.link}
+        draggable={false}
         className={classNames(
           styles.button,
           isActive && styles.active,
@@ -72,6 +73,7 @@ export default function IconedButton(props: IconedButtonProps) {
 
   return (
     <button
+      draggable={false}
       className={classNames(
         styles.button,
         isActive && styles.active,

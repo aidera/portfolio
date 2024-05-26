@@ -145,7 +145,7 @@ export default function SkillsPage() {
         <Grid items={items} onClick={handleItemClick} />
       </PageWithViewerLayoutContent>
       <PageWithViewerLayoutViewer menuItems={[<BackToMenuButton />]}>
-        <img src={'/assets/images/skills.jpg'} />
+        <img draggable={false} src={'/assets/images/skills.jpg'} />
       </PageWithViewerLayoutViewer>
     </PageWithViewerLayout>
   );
