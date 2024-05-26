@@ -5,6 +5,10 @@ import { router } from './router.tsx';
 import './assets/styles/global.scss';
 import ListenAndPronounceProvider from './components/_providers/ListenAndPronounceProvider.tsx';
 
+// TODO: mute voice
+// TODO: animation of items
+// TODO: loader
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StoreProvider>
     <RouterProvider router={router} />
