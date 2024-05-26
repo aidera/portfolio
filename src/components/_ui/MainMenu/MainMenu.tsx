@@ -1,4 +1,4 @@
-import FilledButton from '../_ui/FilledButton/FilledButton';
+import FilledButton from '../FilledButton/FilledButton';
 import styles from './MainMenu.module.scss';
 
 export default function MainMenu() {

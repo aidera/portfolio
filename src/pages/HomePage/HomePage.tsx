@@ -1,6 +1,6 @@
-import AvatarCard from '../../components/AvatarCard/AvatarCard';
-import MainBackground from '../../components/MainBackground/MainBackground';
-import MainMenu from '../../components/MainMenu/MainMenu';
+import AvatarCard from '../../components/_ui/AvatarCard/AvatarCard';
+import MainBackground from '../../components/_ui/MainBackground/MainBackground';
+import MainMenu from '../../components/_ui/MainMenu/MainMenu';
 import DescriptionBlock from '../../components/_ui/DescriptionBlock/DescriptionBlock';
 import styles from './HomePage.module.scss';
 

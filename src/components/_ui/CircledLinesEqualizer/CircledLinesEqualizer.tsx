@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './CircledLinesEqualizer.module.scss';
-import { avatarSounds } from '../../utils/sounds';
+import { avatarSounds } from '../../../utils/sounds';
 
 export default function CircledLinesEqualizer() {
   const [isPronouncing, setIsPronouncing] = useState<boolean>(false);

@@ -1,0 +1,80 @@
+.item {
+  width: 130px;
+  height: 130px;
+  padding: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+
+  &.active {
+    .borders {
+      opacity: 1;
+
+      span {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.ripple {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.borders {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+
+  span {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    transition: 0.3s;
+
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+      border-top: 2px solid var(--border-color);
+      border-left: 2px solid var(--border-color);
+      transform: translate(-8px, -8px);
+    }
+
+    &:nth-child(2) {
+      top: 0;
+      right: 0;
+      border-top: 2px solid var(--border-color);
+      border-right: 2px solid var(--border-color);
+      transform: translate(8px, -8px);
+    }
+
+    &:nth-child(3) {
+      bottom: 0;
+      right: 0;
+      border-bottom: 2px solid var(--border-color);
+      border-right: 2px solid var(--border-color);
+      transform: translate(8px, 8px);
+    }
+
+    &:nth-child(4) {
+      bottom: 0;
+      left: 0;
+      border-bottom: 2px solid var(--border-color);
+      border-left: 2px solid var(--border-color);
+      transform: translate(-8px, 8px);
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
-import SimpleBackground from '../../SimpleBackground/SimpleBackground';
+import SimpleBackground from '../../_ui/SimpleBackground/SimpleBackground';
 import Title from '../../_ui/Title/Title';
-import BackToMenuButton from '../../BackToMenuButton/BackToMenuButton';
+import BackToMenuButton from '../../_ui/BackToMenuButton/BackToMenuButton';
 import styles from './BlankPageLayout.module.scss';
 
 interface BlankPageLayoutProps extends PropsWithChildren {

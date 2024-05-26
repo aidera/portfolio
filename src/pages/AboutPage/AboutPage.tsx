@@ -8,7 +8,7 @@ import ForwardIcon from '../../assets/icons/ForwardIcon';
 import GroupIcon from '../../assets/icons/GroupIcon';
 import OfficeIcon from '../../assets/icons/OfficeIcon';
 import ToolsIcon from '../../assets/icons/ToolsIcon';
-import BackToMenuButton from '../../components/BackToMenuButton/BackToMenuButton';
+import BackToMenuButton from '../../components/_ui/BackToMenuButton/BackToMenuButton';
 import PageWithViewerLayout from '../../components/_layouts/PageWithViewerLayout/PageWithViewerLayout';
 import PageWithViewerLayoutContent from '../../components/_layouts/PageWithViewerLayout/PageWithViewerLayoutContent/PageWithViewerLayoutContent';
 import PageWithViewerLayoutViewer from '../../components/_layouts/PageWithViewerLayout/PageWithViewerLayoutViewer/PageWithViewerLayoutViewer';

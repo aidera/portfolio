@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styles from './AvatarCard.module.scss';
-import { isMobileDevice } from '../../utils/client';
-import useWindowDimensions from '../../utils/hooks/useWindowDimensions';
+import { isMobileDevice } from '../../../utils/client';
+import useWindowDimensions from '../../../utils/hooks/useWindowDimensions';
 import CircledLinesEqualizer from '../CircledLinesEqualizer/CircledLinesEqualizer';
 
 export default function AvatarCard() {

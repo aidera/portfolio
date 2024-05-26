@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import styles from './MainBackground.module.scss';
-import { isMobileDevice } from '../../utils/client';
+import { isMobileDevice } from '../../../utils/client';
 
 export default function MainBackground() {
   const animationContainerRef = useRef<HTMLDivElement>(null);

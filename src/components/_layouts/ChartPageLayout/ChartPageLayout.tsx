@@ -1,7 +1,7 @@
 import { PropsWithChildren, useRef, useState } from 'react';
-import SimpleBackground from '../../SimpleBackground/SimpleBackground';
+import SimpleBackground from '../../_ui/SimpleBackground/SimpleBackground';
 import ChartTitle from '../../_ui/ChartTitle/ChartTitle';
-import BackToMenuButton from '../../BackToMenuButton/BackToMenuButton';
+import BackToMenuButton from '../../_ui/BackToMenuButton/BackToMenuButton';
 import { isMobileDevice } from '../../../utils/client';
 import styles from './ChartPageLayout.module.scss';
 
