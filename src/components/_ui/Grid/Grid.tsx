@@ -11,7 +11,7 @@ export default function Grid(props: GridProps) {
   const gridRef = useRef<HTMLDivElement>(null);
   const [peak, setPeak] = useState(3);
 
-  const step = 30;
+  const step = 25;
 
   useEffect(() => {
     const handleResize = () => {
@@ -57,15 +57,19 @@ export default function Grid(props: GridProps) {
       return rows.map((row, index) => {
         const marginLeft = calculateMarginLeft(index);
         return (
-          <div className={styles.row} style={{ marginLeft: `${marginLeft}px` }}>
+          <div
+            key={index}
+            className={styles.row}
+            style={{ marginLeft: `${marginLeft}px` }}
+          >
             {row.map((item) => (
-              <GridItem item={item} />
+              <GridItem key={item.id} item={item} />
             ))}
           </div>
         );
       });
     } else {
-      return props.items.map((item) => <GridItem item={item} />);
+      return props.items.map((item) => <GridItem key={item.id} item={item} />);
     }
   }, [peak]);
 

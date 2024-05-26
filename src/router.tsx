@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import ContactsPage from './pages/ContactsPage/ContactsPage';
 import ExperiencePage from './pages/ExperiencePage/ExperiencePage';
 import EducationPage from './pages/EducationPage/EducationPage';
+import SkillsPage from './pages/SkillsPage/SkillsPage';
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: '/education',
         element: <EducationPage />,
+      },
+      {
+        path: '/skills',
+        element: <SkillsPage />,
       },
     ],
   },

@@ -46,7 +46,7 @@ export default function GridItem(props: GridItemProps) {
         <span></span>
       </div>
 
-      <img src="/assets/images/avatar.jpg" alt="Title 1" />
+      <img src={props.item.img} alt={props.item.title} />
     </div>
   );
 }
