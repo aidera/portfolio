@@ -7,10 +7,7 @@ export default function ExperiencePage() {
   return (
     <ChartPageLayout title="Experience">
       <div className={styles.items}>
-        <ChartItemBig
-          title="Neyra Labs"
-          img="/assets/images/neyra.webp"
-        >
+        <ChartItemBig title="GhostDrive" img="/assets/images/ghostdrive.jpg">
           <p>Frontend Developer</p>
           <p>Toronto, Canada</p>
           <p>Mar 2024 - Present</p>

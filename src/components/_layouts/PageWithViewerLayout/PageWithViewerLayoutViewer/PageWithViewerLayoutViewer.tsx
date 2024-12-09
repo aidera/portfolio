@@ -5,7 +5,9 @@ interface PageWithViewerLayoutViewerProps extends PropsWithChildren {
   menuItems?: ReactNode[];
 }
 
-export default function PageWithViewerLayoutViewer(props: PageWithViewerLayoutViewerProps) {
+export default function PageWithViewerLayoutViewer(
+  props: PageWithViewerLayoutViewerProps
+) {
   return (
     <div className={styles.container}>
       <div className={styles.content}>{props.children}</div>

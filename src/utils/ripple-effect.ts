@@ -4,7 +4,7 @@ const rippleEffect = (
   cb?: Function
 ) => {
   if (!target) return;
-  
+
   const rect = target.getBoundingClientRect();
   const circle = document.createElement('span');
   const diameter = Math.max(rect.width, rect.height);

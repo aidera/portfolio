@@ -8,4 +8,4 @@ export const avatarSounds = [
   'avatar-2.mp3',
   'avatar-3.mp3',
   'avatar-4.mp3',
-]
+];

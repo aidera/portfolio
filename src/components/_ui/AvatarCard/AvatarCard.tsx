@@ -2,10 +2,13 @@ import { useEffect, useRef } from 'react';
 import styles from './AvatarCard.module.scss';
 import { isMobileDevice } from '../../../utils/client';
 import useWindowDimensions from '../../../utils/hooks/useWindowDimensions';
-import CircledLinesEqualizer from '../CircledLinesEqualizer/CircledLinesEqualizer';
+import CircledLinesEqualizer, {
+  CircledLinesEqualizerRef,
+} from '../CircledLinesEqualizer/CircledLinesEqualizer';
 
 export default function AvatarCard() {
   const innerContainerRef = useRef<HTMLDivElement>(null);
+  const equalizerRef = useRef<CircledLinesEqualizerRef>(null);
   const { windowWidth } = useWindowDimensions();
 
   useEffect(() => {
@@ -46,6 +49,10 @@ export default function AvatarCard() {
     };
   }, [windowWidth]);
 
+  const onAvatarClick = () => {
+    equalizerRef.current?.play();
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles['avatar-container']}>
@@ -53,10 +60,10 @@ export default function AvatarCard() {
           <div className={styles.orbit1}></div>
 
           <div className={styles.equalizer1}>
-            <CircledLinesEqualizer />
+            <CircledLinesEqualizer ref={equalizerRef} />
           </div>
 
-          <div className={styles.orbit3}>
+          <div className={styles.orbit3} onClick={onAvatarClick}>
             <img
               className={styles['avatar-image']}
               draggable={false}

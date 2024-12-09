@@ -9,13 +9,16 @@ import styles from './ContactsPage.module.scss';
 
 export default function ContactsPage() {
   return (
-    <BlankPageLayout title="Contacts" backgroundImage="/assets/images/contacts.jpg">
+    <BlankPageLayout
+      title="Contacts"
+      backgroundImage="/assets/images/contacts.jpg"
+    >
       <div className={styles.items}>
         <div className={styles.item}>
           <div className={styles.icon}>
             <HomeIcon />
           </div>
-          <p>Toronto, Canada</p>
+          <p>Kyiv, Ukraine</p>
         </div>
 
         <div className={styles.item}>
@@ -27,14 +30,14 @@ export default function ContactsPage() {
           </p>
         </div>
 
-        <div className={styles.item}>
+        {/* <div className={styles.item}>
           <div className={styles.icon}>
             <PhoneIcon />
           </div>
           <p>
             <a href="tel:+14378498542">+1 (437) 849-8542</a>
           </p>
-        </div>
+        </div> */}
 
         <div className={styles.item}>
           <div className={styles.icon}>

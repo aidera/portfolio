@@ -18,7 +18,10 @@ import styles from './AboutPage.module.scss';
 export default function AboutPage() {
   return (
     <PageWithViewerLayout>
-      <PageWithViewerLayoutContent title="About" menuItems={[<BackToMenuButton />]}>
+      <PageWithViewerLayoutContent
+        title="About"
+        menuItems={[<BackToMenuButton />]}
+      >
         <DescriptionBlock
           title1="Eugenia Mikhaleva"
           title1Type="h2"
