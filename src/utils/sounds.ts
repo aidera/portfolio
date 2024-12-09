@@ -1,5 +1,7 @@
+import { baseRoute } from './env';
+
 export const playSound = (sound: 'hover') => {
-  const audio = new Audio(`/assets/sounds/${sound}.mp3`);
+  const audio = new Audio(`${baseRoute}assets/sounds/${sound}.mp3`);
   audio.play();
 };
 

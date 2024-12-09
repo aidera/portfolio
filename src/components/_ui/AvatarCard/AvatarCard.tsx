@@ -5,6 +5,7 @@ import useWindowDimensions from '../../../utils/hooks/useWindowDimensions';
 import CircledLinesEqualizer, {
   CircledLinesEqualizerRef,
 } from '../CircledLinesEqualizer/CircledLinesEqualizer';
+import { baseRoute } from '../../../utils/env';
 
 export default function AvatarCard() {
   const innerContainerRef = useRef<HTMLDivElement>(null);
@@ -67,7 +68,7 @@ export default function AvatarCard() {
             <img
               className={styles['avatar-image']}
               draggable={false}
-              src={'/assets/images/avatar.jpg'}
+              src={`${baseRoute}assets/images/avatar.jpg`}
               alt={'Avatar'}
             />
           </div>

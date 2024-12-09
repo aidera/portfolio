@@ -5,13 +5,14 @@ import LinkedInIcon from '../../assets/icons/LinkedInIcon';
 import MailIcon from '../../assets/icons/MailIcon';
 // import PhoneIcon from '../../assets/icons/PhoneIcon';
 import BlankPageLayout from '../../components/_layouts/BlankPageLayout/BlankPageLayout';
+import { baseRoute } from '../../utils/env';
 import styles from './ContactsPage.module.scss';
 
 export default function ContactsPage() {
   return (
     <BlankPageLayout
       title="Contacts"
-      backgroundImage="/assets/images/contacts.jpg"
+      backgroundImage={`${baseRoute}assets/images/contacts.jpg`}
     >
       <div className={styles.items}>
         <div className={styles.item}>

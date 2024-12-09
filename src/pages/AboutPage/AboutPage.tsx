@@ -13,6 +13,7 @@ import PageWithViewerLayout from '../../components/_layouts/PageWithViewerLayout
 import PageWithViewerLayoutContent from '../../components/_layouts/PageWithViewerLayout/PageWithViewerLayoutContent/PageWithViewerLayoutContent';
 import PageWithViewerLayoutViewer from '../../components/_layouts/PageWithViewerLayout/PageWithViewerLayoutViewer/PageWithViewerLayoutViewer';
 import DescriptionBlock from '../../components/_ui/DescriptionBlock/DescriptionBlock';
+import { baseRoute } from '../../utils/env';
 import styles from './AboutPage.module.scss';
 
 export default function AboutPage() {
@@ -144,7 +145,7 @@ export default function AboutPage() {
         </div>
       </PageWithViewerLayoutContent>
       <PageWithViewerLayoutViewer menuItems={[<BackToMenuButton />]}>
-        <img draggable={false} src={'/assets/images/about.jpg'} />
+        <img draggable={false} src={`${baseRoute}assets/images/about.jpg`} />
       </PageWithViewerLayoutViewer>
     </PageWithViewerLayout>
   );

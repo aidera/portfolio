@@ -6,36 +6,35 @@ import ContactsPage from './pages/ContactsPage/ContactsPage';
 import ExperiencePage from './pages/ExperiencePage/ExperiencePage';
 import EducationPage from './pages/EducationPage/EducationPage';
 import SkillsPage from './pages/SkillsPage/SkillsPage';
-
-const base = process.env.NODE_ENV === 'production' ? '/portfolio/' : '/';
+import { baseRoute } from './utils/env';
 
 export const router = createBrowserRouter([
   {
-    path: base,
+    path: baseRoute,
     element: <Root />,
     children: [
       {
-        path: base,
+        path: baseRoute,
         element: <HomePage />,
       },
       {
-        path: `${base}about`,
+        path: `${baseRoute}about`,
         element: <AboutPage />,
       },
       {
-        path: `${base}contacts`,
+        path: `${baseRoute}contacts`,
         element: <ContactsPage />,
       },
       {
-        path: `${base}experience`,
+        path: `${baseRoute}experience`,
         element: <ExperiencePage />,
       },
       {
-        path: `${base}education`,
+        path: `${baseRoute}education`,
         element: <EducationPage />,
       },
       {
-        path: `${base}skills`,
+        path: `${baseRoute}skills`,
         element: <SkillsPage />,
       },
     ],

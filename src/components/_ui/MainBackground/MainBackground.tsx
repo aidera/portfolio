@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styles from './MainBackground.module.scss';
 import { isMobileDevice } from '../../../utils/client';
+import { baseRoute } from '../../../utils/env';
 
 export default function MainBackground() {
   const animationContainerRef = useRef<HTMLDivElement>(null);
@@ -103,8 +104,18 @@ export default function MainBackground() {
 
           <div className={styles.linelight + ' ' + styles.linelight11}></div>
 
-          <div className={styles.spotlight1}></div>
-          <div className={styles.spotlight2}></div>
+          <div
+            className={styles.spotlight1}
+            style={{
+              backgroundImage: `url(${baseRoute}assets/images/gradient.png)`,
+            }}
+          ></div>
+          <div
+            className={styles.spotlight2}
+            style={{
+              backgroundImage: `url(${baseRoute}assets/images/gradient.png)`,
+            }}
+          ></div>
         </div>
       </div>
     </div>
