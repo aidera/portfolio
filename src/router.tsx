@@ -7,33 +7,35 @@ import ExperiencePage from './pages/ExperiencePage/ExperiencePage';
 import EducationPage from './pages/EducationPage/EducationPage';
 import SkillsPage from './pages/SkillsPage/SkillsPage';
 
+const base = process.env.NODE_ENV === 'production' ? '/portfolio/' : '/';
+
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: base,
     element: <Root />,
     children: [
       {
-        path: '/',
+        path: base,
         element: <HomePage />,
       },
       {
-        path: '/about',
+        path: `${base}about`,
         element: <AboutPage />,
       },
       {
-        path: '/contacts',
+        path: `${base}contacts`,
         element: <ContactsPage />,
       },
       {
-        path: '/experience',
+        path: `${base}experience`,
         element: <ExperiencePage />,
       },
       {
-        path: '/education',
+        path: `${base}education`,
         element: <EducationPage />,
       },
       {
-        path: '/skills',
+        path: `${base}skills`,
         element: <SkillsPage />,
       },
     ],
