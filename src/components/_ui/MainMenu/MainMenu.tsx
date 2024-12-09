@@ -1,16 +1,18 @@
 import FilledButton from '../FilledButton/FilledButton';
 import styles from './MainMenu.module.scss';
 
+const base = process.env.NODE_ENV === 'production' ? '/portfolio/' : '/';
+
 export default function MainMenu() {
   return (
     <div className={styles.menu}>
-      <FilledButton text="About" link={'/about'} />
-      <FilledButton text="Education" link={'/education'} />
-      <FilledButton text="Skills" link={'/skills'} />
+      <FilledButton text="About" link={`${base}about`} />
+      <FilledButton text="Education" link={`${base}education`} />
+      <FilledButton text="Skills" link={`${base}skills`} />
 
-      <FilledButton text="Experience" link={'/experience'} />
-      <FilledButton text="Contacts" link={'/contacts'} />
-      {/* <FilledButton text="Projects" link={'/projects'} /> */}
+      <FilledButton text="Experience" link={`${base}experience`} />
+      <FilledButton text="Contacts" link={`${base}contacts`} />
+      {/* <FilledButton text="Projects" link={`${base}projects`} /> */}
     </div>
   );
 }

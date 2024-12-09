@@ -67,7 +67,7 @@ export default function AvatarCard() {
             <img
               className={styles['avatar-image']}
               draggable={false}
-              src={'../../../assets/images/avatar.jpg'}
+              src={'/assets/images/avatar.jpg'}
               alt={'Avatar'}
             />
           </div>
