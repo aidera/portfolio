@@ -101,7 +101,6 @@ const CircledLinesEqualizer = forwardRef<CircledLinesEqualizerRef>((_, ref) => {
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
     let lastSoundIndex: null | number = null;
-    let animationFrameId: number | undefined;
 
     let soundIndex;
     if (preferableSoundIndex !== undefined) {

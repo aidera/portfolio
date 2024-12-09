@@ -3,7 +3,7 @@ import GithubIcon from '../../assets/icons/GithubIcon';
 import HomeIcon from '../../assets/icons/HomeIcon';
 import LinkedInIcon from '../../assets/icons/LinkedInIcon';
 import MailIcon from '../../assets/icons/MailIcon';
-import PhoneIcon from '../../assets/icons/PhoneIcon';
+// import PhoneIcon from '../../assets/icons/PhoneIcon';
 import BlankPageLayout from '../../components/_layouts/BlankPageLayout/BlankPageLayout';
 import styles from './ContactsPage.module.scss';
 
